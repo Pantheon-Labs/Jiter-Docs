@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Jiter", // Usually your GitHub org/user name.
+  organizationName: "Pantheon-Labs", // Usually your GitHub org/user name.
   projectName: "Jiter-Docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
