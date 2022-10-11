@@ -31,10 +31,12 @@ You can retrieve many events at once and filter them based on statuses. This end
 | Parameter          | Description                                                    | Example                                                                               |
 | ------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
 | status             | Status of the events you would like to retrieve                | One of: `Pending`, `Cancelled`, `Queued`, `Sent`, `Failed To Send`, `Failed To Queue` |
-| scheduledStartTime | ISO timestamp to get any events scheduled **after** this time  | `'2022-10-05T21:15:30.258Z'`                                                          |
-| scheduledEndTime   | ISO timestamp to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'`                                                          |
-| createdAtStartTime | ISO timestamp to get any events created **after** this time    | `'2022-10-05T23:15:30.258Z'`                                                          |
-| createdAtEndTime   | ISO timestamp to get any events created **before** this time   | `'2022-10-05T24:15:30.258Z'`                                                          |
+| sentAtStartTime    | ISO timestamp to get any events scheduled **after** this time  | `'2022-10-05T21:15:30.258Z'`                                                          |
+| sentAtEndTime      | ISO timestamp to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'`                                                          |
+| failedAtStartTime  | ISO timestamp to get any events created **after** this time    | `'2022-10-05T23:15:30.258Z'`                                                          |
+| failedAtEndTime    | ISO timestamp to get any events created **before** this time   | `'2022-10-05T24:15:30.258Z'`                                                          |
+| scheduledStartDate | ISO timestamp to get any events created **before** this time   | `'2022-10-05T24:15:30.258Z'`                                                          |
+| scheduledStartDate | ISO timestamp to get any events created **before** this time   | `'2022-10-05T24:15:30.258Z'`                                                          |
 
 :::note
 
