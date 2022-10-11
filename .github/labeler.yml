@@ -1,0 +1,8 @@
+rest api:
+  - docs/rest-api/**/*
+
+getting started:
+  - docs/getting-started.md
+
+quotas and limits:
+  - quotas-and-limits.md
