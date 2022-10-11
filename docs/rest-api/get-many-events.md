@@ -35,7 +35,7 @@ You can retrieve many events at once and filter them based on statuses. This end
 | scheduledEndDate   | AnISO timestamp in the _future_ to get any events scheduled **before** this time  | `'2022-10-05T22:15:30.258Z'`                                                          |
 | sentAtStartDate    | An ISO timestamp in the _past_ to get any events sent **after** this time         | `'2022-10-05T23:15:30.258Z'`                                                          |
 | sentAtEndDate      | An ISO timestamp in the _past_ to get any events sent **before** this time        | `'2022-10-05T24:15:30.258Z'`                                                          |
-| failedAtStartDate  | An ISO timestamp in the _past_ to get any events that failed **before** this time | `'2022-10-05T25:15:30.258Z'`                                                          |
+| failedAtStartDate  | An ISO timestamp in the _past_ to get any events that failed **after** this time  | `'2022-10-05T25:15:30.258Z'`                                                          |
 | failedAtEndDate    | An ISO timestamp in the _past_ to get any events that failed **before** this time | `'2022-10-05T26:15:30.258Z'`                                                          |
 
 :::note
