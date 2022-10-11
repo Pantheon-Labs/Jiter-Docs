@@ -24,7 +24,7 @@ style={{
 
 >
 
-You can retrieve many events at once and filter them based on statuses. This endpoint will return up to 1,000 future events and 1,000 past events from the last 7 days. You can filter events based on the parameters below.
+You can retrieve up to 1,000 events per query and filter them based on the parameters below.
 
 ## Request Query Parameters
 
