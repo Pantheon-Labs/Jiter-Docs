@@ -36,7 +36,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs",
+          editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs/blob/main",
         },
         // blog: {
         //   showReadingTime: true,
