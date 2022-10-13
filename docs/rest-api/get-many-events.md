@@ -28,15 +28,16 @@ You can retrieve up to 1,000 events per query and filter them based on the param
 
 ## Request Query Parameters
 
-| Parameter          | Description                                                                       | Example                                                                               |
-| ------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| status             | Status of the events you would like to retrieve                                   | One of: `Pending`, `Cancelled`, `Queued`, `Sent`, `Failed To Send`, `Failed To Queue` |
-| scheduledStartDate | An ISO timestamp in the _future_ to get any events scheduled **after** this time  | `'2022-10-05T21:15:30.258Z'`                                                          |
-| scheduledEndDate   | An ISO timestamp in the _future_ to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'`                                                          |
-| sentAtStartDate    | An ISO timestamp in the _past_ to get any events sent **after** this time         | `'2022-10-05T23:15:30.258Z'`                                                          |
-| sentAtEndDate      | An ISO timestamp in the _past_ to get any events sent **before** this time        | `'2022-10-05T24:15:30.258Z'`                                                          |
-| failedAtStartDate  | An ISO timestamp in the _past_ to get any events that failed **after** this time  | `'2022-10-05T25:15:30.258Z'`                                                          |
-| failedAtEndDate    | An ISO timestamp in the _past_ to get any events that failed **before** this time | `'2022-10-05T26:15:30.258Z'`                                                          |
+| Parameter | Description | Example |
+| ------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| status | Status of the events you would like to retrieve | One of **OR** an array of: `Pending`, `Cancelled`, `Queued`, `Sent`, `Failed To Send`, `Failed To Queue` |
+| scheduledStartDate | An ISO timestamp in the _future_ to get any events scheduled **after** this time | `'2022-10-05T21:15:30.258Z'` |
+| scheduledEndDate | An ISO timestamp in the _future_ to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'` |
+| sentAtStartDate | An ISO timestamp in the _past_ to get any events sent **after** this time | `'2022-10-05T23:15:30.258Z'` |
+| sentAtEndDate | An ISO timestamp in the _past_ to get any events sent **before** this time | `'2022-10-05T24:15:30.258Z'` |
+| failedAtStartDate | An ISO timestamp in the _past_ to get any events that failed **after** this time | `'2022-10-05T25:15:30.258Z'` |
+| failedAtEndDate | An ISO timestamp in the _past_ to get any events that failed **before** this time | `'2022-10-05T26:15:30.258Z'` |
+
 
 :::note
 If an event has a `sentAt` or `failedAt` date, it will only be retrieved if that date is within the last 7 days. If you would like to search for events farther back than this, please [send us some feedback](https://app.jiter.dev/send-us-feedback?prompt=MakeSuggestion) with your use case!
@@ -64,7 +65,7 @@ const apiBaseUrl = "https://app.jiter.dev/api";
 const getManyEvents = async () => {
   const query = new URLSearchParams({
     scheduledStartDate: "2022-10-27T04:50:26.573Z",
-    status: "Pending",
+    status: "Pending", // For multiple statuses, use: ["Pending", "Sent"].toString()
   }).toString();
 
   try {
@@ -91,7 +92,7 @@ const getManyEvents = () => {
   Jiter.init({ apiKey: "YOUR_API_KEY" })
 
   try {
-    const events = await Jiter.Events.getManyEvents({ scheduledStartDate: '2022-10-27T04:50:26.573Z' , status: 'Pending' })
+    const events = await Jiter.Events.getManyEvents({ scheduledStartDate: '2022-10-27T04:50:26.573Z' , status: 'Pending' }) // For multiple statuses, use: ["Pending", "Sent"].toString()
     console.log("Events found 🎉", events);
   } catch (error) {
     console.log("Unable to find event", error);
