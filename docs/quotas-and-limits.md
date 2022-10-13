@@ -31,5 +31,5 @@ You can create as many events that you want, however, you can only have 1,000 _s
 Per query, you are limited to:
 
 - 1,000 events
-- Events with a `createdAt` greater than or equal to 7 days ago
-- Events with a `scheduledTime` greater than or equal to 7 days ago
+- Any event with a `scheduledTime` in the future
+- Any event with a `sentAt` or `failedAt` date in the last 7 days

@@ -24,31 +24,32 @@ style={{
 
 >
 
-You can retrieve many events at once and filter them based on statuses. This endpoint will return up to 1,000 future events and 1,000 past events from the last 7 days. You can filter events based on the parameters below.
+You can retrieve up to 1,000 events per query and filter them based on the parameters below.
 
 ## Request Query Parameters
 
-| Parameter          | Description                                                    | Example                                                                               |
-| ------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| status             | Status of the events you would like to retrieve                | One of: `Pending`, `Cancelled`, `Queued`, `Sent`, `Failed To Send`, `Failed To Queue` |
-| scheduledStartTime | ISO timestamp to get any events scheduled **after** this time  | `'2022-10-05T21:15:30.258Z'`                                                          |
-| scheduledEndTime   | ISO timestamp to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'`                                                          |
-| createdAtStartTime | ISO timestamp to get any events created **after** this time    | `'2022-10-05T23:15:30.258Z'`                                                          |
-| createdAtEndTime   | ISO timestamp to get any events created **before** this time   | `'2022-10-05T24:15:30.258Z'`                                                          |
+| Parameter          | Description                                                                       | Example                                                                               |
+| ------------------ | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| status             | Status of the events you would like to retrieve                                   | One of: `Pending`, `Cancelled`, `Queued`, `Sent`, `Failed To Send`, `Failed To Queue` |
+| scheduledStartDate | An ISO timestamp in the _future_ to get any events scheduled **after** this time  | `'2022-10-05T21:15:30.258Z'`                                                          |
+| scheduledEndDate   | An ISO timestamp in the _future_ to get any events scheduled **before** this time | `'2022-10-05T22:15:30.258Z'`                                                          |
+| sentAtStartDate    | An ISO timestamp in the _past_ to get any events sent **after** this time         | `'2022-10-05T23:15:30.258Z'`                                                          |
+| sentAtEndDate      | An ISO timestamp in the _past_ to get any events sent **before** this time        | `'2022-10-05T24:15:30.258Z'`                                                          |
+| failedAtStartDate  | An ISO timestamp in the _past_ to get any events that failed **after** this time  | `'2022-10-05T25:15:30.258Z'`                                                          |
+| failedAtEndDate    | An ISO timestamp in the _past_ to get any events that failed **before** this time | `'2022-10-05T26:15:30.258Z'`                                                          |
 
 :::note
-
-`scheduledStartTime` and `createdAtStartTime` values must be greater than or equal to 7 days ago. If you would like to search for events farther back than this, please [send us some feedback](https://app.jiter.dev/send-us-feedback?prompt=MakeSuggestion) with your use case!
+If an event has a `sentAt` or `failedAt` date, it will only be retrieved if that date is within the last 7 days. If you would like to search for events farther back than this, please [send us some feedback](https://app.jiter.dev/send-us-feedback?prompt=MakeSuggestion) with your use case!
 
 :::
 
 ## Response
 
-| Code | Description                                           |
-| ---- | ----------------------------------------------------- |
-| 200  | Events returned successfully                          |
-| 400  | createdAtStartTime is outside of the searchable range |
-| 500  | Unable to get events                                  |
+| Code | Description                                        |
+| ---- | -------------------------------------------------- |
+| 200  | Events returned successfully                       |
+| 400  | sentAtStartDate is outside of the searchable range |
+| 500  | Unable to get events                               |
 
 ## Example Usage
 
@@ -62,7 +63,7 @@ const apiBaseUrl = "https://app.jiter.dev/api";
 
 const getManyEvents = async () => {
   const query = new URLSearchParams({
-    scheduledStartTime: "2022-10-27T04:50:26.573Z",
+    scheduledStartDate: "2022-10-27T04:50:26.573Z",
     status: "Pending",
   }).toString();
 
@@ -90,7 +91,7 @@ const getManyEvents = () => {
   Jiter.init({ apiKey: "YOUR_API_KEY" })
 
   try {
-    const events = await Jiter.Events.getManyEvents({ scheduledStartTime: '2022-10-27T04:50:26.573Z' , status: 'Pending' })
+    const events = await Jiter.Events.getManyEvents({ scheduledStartDate: '2022-10-27T04:50:26.573Z' , status: 'Pending' })
     console.log("Events found 🎉", events);
   } catch (error) {
     console.log("Unable to find event", error);
