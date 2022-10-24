@@ -14,7 +14,7 @@ The `third` retry will occur 10 seconds after the `second` retry.
 
 Example:
 
-If you have an event scheduled for `12:00:00 AM` but we receive a `500` status code from your server.
+If you have an event scheduled for `12:00:00 AM` but we receive a `500` status code from your server:
 
 The first retry will occur at `12:00:03 AM`
 
