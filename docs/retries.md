@@ -14,13 +14,13 @@ The `third` retry will occur 10 seconds after the `second` retry.
 
 Example:
 
-If you have an event scheduled for 12:00:00AM but we receive a `500` status code from your server.
+If you have an event scheduled for `12:00:00 AM` but we receive a `500` status code from your server.
 
-The first retry will occur at 12:00:03AM
+The first retry will occur at `12:00:03 AM`
 
-The second retry will occur at 12:00:08AM
+The second retry will occur at `12:00:08 AM`
 
-The third retry will occur at 12:00:18AM
+The third retry will occur at `12:00:18 AM`
 
 You need to return any status code between `200` - `299` for Jiter to consider the event or CRON job successfully delivered.
 
