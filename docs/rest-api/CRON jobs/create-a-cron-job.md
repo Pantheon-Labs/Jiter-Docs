@@ -1,5 +1,6 @@
 ---
 id: create-a-cron-job
+slug: /create-a-cron-job
 title: Create a CRON Job
 sidebar_position: 1
 ---
@@ -20,21 +21,21 @@ style={{
 </span>
 );
 
-<Highlight color="#00c853">POST</Highlight> https://app.jiter.dev/api/events
+<Highlight color="#00c853">POST</Highlight> https://app.jiter.dev/api/cronjobs
 
 ## Request Body Parameters
 
 | Parameter     | Description                                                              | Example                                                                 |
 | ------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| payload       | Your stringified payload                                                 | `'{"action":"buyGroceries","values":["eggs","bacon","pasta","bread"]}'` |
+| payload       | Your stringified payload                                                 | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
 | destination   | The endpoint we should send your event to                                | `https://your-app.com/webhooks/jiter`                                   |
-| scheduledTime | An ISO timestamp in the future when you would like to receive your event | `'2022-10-05T19:10:58.322Z'`                                            |
+| expression | A cron expression | `'2022-10-05T19:10:58.322Z'`                                            |
 
 ## Response
 
 | Code | Description                                           |
 | ---- | ----------------------------------------------------- |
-| 200  | Creates a scheduled event                             |
+| 200  | Creates a cron job                           |
 | 400  | Please make sure your scheduled time is in the future |
 | 500  | Unable to create the event                            |
 
