@@ -24,4 +24,4 @@ The third retry will occur at `12:00:18 AM`
 
 You need to return any status code between `200` - `299` for Jiter to consider the event or CRON job successfully delivered.
 
-You can view the event and CRON job history by using the `/events/:id` and `/cronjobs/:id` endpoints.
+You can view the event and CRON job history by using the `GET /events/:id` and `GET /cronjobs/:id` endpoints.
