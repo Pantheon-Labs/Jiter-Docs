@@ -1,7 +1,7 @@
 ---
 id: get-many-cron-jobs
 slug: /get-many-cron-jobs
-title: Get Many CRON Jobs
+title: Get Many Cron Jobs
 sidebar_position: 5
 ---
 
@@ -23,14 +23,14 @@ style={{
 
 <Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs
 
-This endpoint will return all CRON jobs for your org.
+This endpoint will return all cron jobs for your org.
 
 ## Response
 
 | Code | Description                     |
 | ---- | ------------------------------- |
 | 200  | Cron jobs returned successfully |
-| 500  | Unable to retrieve CRON jobs    |
+| 500  | Unable to retrieve cron jobs    |
 
 ## Example Usage
 
@@ -54,7 +54,7 @@ const getManyCronJobs = async () => {
   }
 };
 
-getManyEvents();
+getManyCronJobs();
 ```
 
 </TabItem>

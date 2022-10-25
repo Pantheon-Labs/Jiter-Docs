@@ -1,7 +1,7 @@
 ---
 id: create-a-cron-job
 slug: /create-a-cron-job
-title: Create a CRON Job
+title: Create a Cron Job
 sidebar_position: 1
 ---
 

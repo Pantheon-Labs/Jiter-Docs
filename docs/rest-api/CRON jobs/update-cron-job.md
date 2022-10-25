@@ -1,7 +1,7 @@
 ---
 id: update-cron-job
 slug: /update-cron-job
-title: Update CRON Job
+title: Update a Cron Job
 sidebar_position: 4
 ---
 
@@ -29,23 +29,23 @@ style={{
 
 | Parameter | Description                           | Example |
 | --------- | ------------------------------------- | ------- |
-| cronJobId | ID of the CRON job you want to update | `3`     |
+| cronJobId | ID of the cron job you want to update | `3`     |
 
 ## Request Body Parameters
 
 | Parameter   | Description                                    | Example                                                                         |
 | ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
 | payload     | Your stringified payload                       | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
-| destination | The endpoint we should send your CRON event to | `https://your-app.com/webhooks/jiter`                                           |
+| destination | The endpoint we should send your cron event to | `https://your-app.com/webhooks/jiter`                                           |
 | expression  | A cron expression                              | `* * * * *`                                                                     |
-| status      | The CRON job status, `Active` or `Disabled`    | `Disabled`                                                                      |
+| status      | The cron job status, `Active` or `Disabled`    | `Disabled`                                                                      |
 
 ## Response
 
 | Code | Description                         |
 | ---- | ----------------------------------- |
-| 200  | CRON job updated successfully       |
-| 404  | We were unable to find the CRON job |
+| 200  | Cron job updated successfully       |
+| 404  | We were unable to find the cron job |
 | 500  | Unable to edit the cron job         |
 
 ## Example Usage
@@ -68,13 +68,13 @@ const updateCronJob = async () => {
       { headers: { "x-api-key": "YOUR_API_KEY" } }
     );
 
-    console.log("CRON job updated 🎉", data);
+    console.log("cron job updated 🎉", data);
   } catch (error) {
-    console.log("Unable to update CRON job", error);
+    console.log("Unable to update cron job", error);
   }
 };
 
-updaupdateCronJobteEvent();
+updateCronJob();
 ```
 
 </TabItem>
