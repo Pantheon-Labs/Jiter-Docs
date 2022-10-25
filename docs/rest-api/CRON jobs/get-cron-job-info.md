@@ -1,6 +1,6 @@
 ---
 id: get-cron-job-info
-slug: /get-cronjob-info
+slug: /get-cron-job-info
 title: Get CRON Job Info
 sidebar_position: 2
 ---
@@ -23,7 +23,7 @@ style={{
 
 Retrieves info about a specific CRON job by ID
 
-<Highlight color="#0091ea">GET</Highlight> 'https://app.jiter.dev/api/cronjobs/:cronJobId'
+<Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId
 
 ## Request Parameters
 

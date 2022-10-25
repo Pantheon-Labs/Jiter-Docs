@@ -1,6 +1,7 @@
 ---
-id: get-many-events
-title: Get Many Events
+id: get-many-cron-jobs
+slug: /get-many-cron-jobs
+title: Get Many CRON Jobs
 sidebar_position: 5
 ---
 

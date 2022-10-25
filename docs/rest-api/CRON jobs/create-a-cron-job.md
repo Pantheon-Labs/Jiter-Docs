@@ -25,19 +25,19 @@ style={{
 
 ## Request Body Parameters
 
-| Parameter   | Description                                    | Example                                                                         |
-| ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
-| payload     | Your stringified payload                       | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
-| destination | The endpoint we should send your CRON event to | `https://your-app.com/webhooks/jiter`                                           |
-| expression  | A cron expression                              | `'* * * * *'`                                                                   |
+| Parameter   | Description                                 | Example                                                                         |
+| ----------- | ------------------------------------------- | ------------------------------------------------------------------------------- |
+| payload     | Your stringified payload                    | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
+| destination | The endpoint we should send your payload to | `https://your-app.com/webhooks/jiter`                                           |
+| expression  | A cron expression                           | `'* * * * *'`                                                                   |
 
 ## Response
 
-| Code | Description                          |
-| ---- | ------------------------------------ |
-| 200  | Cron job created                     |
-| 400  | Please enter a valid CRON expression |
-| 500  | Unable to create the cron            |
+| Code | Description                   |
+| ---- | ----------------------------- |
+| 200  | Cron job created              |
+| 400  | Invalid request body          |
+| 500  | Unable to create the cron job |
 
 ## Example Usage
 

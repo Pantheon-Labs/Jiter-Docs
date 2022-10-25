@@ -1,6 +1,7 @@
 ---
-id: update-event
-title: Update Event
+id: update-cron-job
+slug: /update-cron-job
+title: Update CRON Job
 sidebar_position: 4
 ---
 
