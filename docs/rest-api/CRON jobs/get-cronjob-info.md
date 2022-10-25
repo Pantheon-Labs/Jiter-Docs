@@ -49,7 +49,7 @@ import axios from "axios";
 
 const apiBaseUrl = "https://app.jiter.dev/api";
 
-const getEvent = async () => {
+const getCronJob = async () => {
   try {
     const { data } = await axios.get(`${apiBaseUrl}/cronjobs/9`, {
       headers: { "x-api-key": "YOUR_API_KEY" },
@@ -61,7 +61,7 @@ const getEvent = async () => {
   }
 };
 
-getEvent();
+getCronJob();
 ```
 
 </TabItem>
