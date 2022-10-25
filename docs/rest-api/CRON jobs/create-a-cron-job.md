@@ -35,9 +35,9 @@ style={{
 
 | Code | Description                          |
 | ---- | ------------------------------------ |
-| 200  | Creates a cron job                   |
+| 200  | Cron job created                     |
 | 400  | Please enter a valid CRON expression |
-| 500  | Unable to create the event           |
+| 500  | Unable to create the cron            |
 
 ## Example Usage
 
