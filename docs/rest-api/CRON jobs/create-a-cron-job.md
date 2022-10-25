@@ -25,19 +25,19 @@ style={{
 
 ## Request Body Parameters
 
-| Parameter     | Description                                                              | Example                                                                 |
-| ------------- | ------------------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| payload       | Your stringified payload                                                 | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
-| destination   | The endpoint we should send your event to                                | `https://your-app.com/webhooks/jiter`                                   |
-| expression | A cron expression | `'2022-10-05T19:10:58.322Z'`                                            |
+| Parameter   | Description                                    | Example                                                                         |
+| ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
+| payload     | Your stringified payload                       | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
+| destination | The endpoint we should send your CRON event to | `https://your-app.com/webhooks/jiter`                                           |
+| expression  | A cron expression                              | `'* * * * *'`                                                                   |
 
 ## Response
 
-| Code | Description                                           |
-| ---- | ----------------------------------------------------- |
-| 200  | Creates a cron job                           |
-| 400  | Please make sure your scheduled time is in the future |
-| 500  | Unable to create the event                            |
+| Code | Description                          |
+| ---- | ------------------------------------ |
+| 200  | Creates a cron job                   |
+| 400  | Please enter a valid CRON expression |
+| 500  | Unable to create the event           |
 
 ## Example Usage
 
@@ -48,65 +48,32 @@ style={{
 import axios from "axios";
 
 const apiBaseUrl = "https://app.jiter.dev/api";
-const twentyFourHours = 24 * 60 * 60 * 1000;
 
-const createEvent = async () => {
-  const tomorrow = new Date(Date.now() + twentyFourHours);
-
+const createCronJob = async () => {
   try {
     const { data } = await axios.post(
-      `${apiBaseUrl}/events`,
+      `${apiBaseUrl}/cronjobs`,
       {
         destination: "https://your-app.com/webhooks/jiter",
-        scheduledTime: tomorrow,
+        expression: "* * * * *",
         payload: JSON.stringify({
-          action: "buyGroceries",
+          action: "buyGroceriesReminder",
           values: ["eggs", "bacon", "pasta", "bread"],
         }),
       },
       { headers: { "x-api-key": "YOUR_API_KEY" } }
     );
 
-    console.log("Event created 🎉", data);
+    console.log("Cron Job created 🎉", data);
   } catch (error) {
-    console.log("Unable to create event", error);
+    console.log("Unable to create Cron Job", error);
   }
 };
 
-createEvent();
+createCronJob();
 ```
 
 </TabItem>
-  <TabItem value="js" label="Javascript" >
-
-```jsx title="index.js"
-import Jiter from "@jiter/node"
-
-const twentyFourHours = 24 * 60 * 60 * 1000;
-const tomorrow = new Date(Date.now() + twentyFourHours);
-
-
-const main = () => {
-  Jiter.init({ apiKey: "YOUR_API_KEY" })
-
-  try {
-    const createdEvent = await Jiter.Events.createEvent({
-      destination: "https://your-app.com/webhooks/jiter",
-      payload: JSON.stringify({
-            action: "buyGroceries",
-            values: ["eggs", "bacon", "pasta", "bread"],
-          }),
-          scheduledTime: tomorrow,
-    })
-    console.log("Event created 🎉", data);
-  } catch (error) {
-    console.log("Unable to create event", error);
-  }
-}
-
-```
-
-  </TabItem>
 
 </Tabs>
 
@@ -115,18 +82,23 @@ const main = () => {
 ```json
 {
   "id": "9",
-  "scheduledTime": "2022-10-27T04:50:26.573Z",
+  "history": [],
+  "status": "Active",
   "destination": "https://your-app.com/webhooks/jiter",
-  "org": "5",
-  "status": "Pending",
-  "payload": "{'action':'buyGroceries','values':['eggs','bacon','pasta','bread']}",
-  "createdAt": "2022-10-05T19:51:27.000Z",
-  "updatedAt": "2022-10-05T19:51:27.000Z"
+  "org": "3",
+  "payload": "{'action':'buyGroceriesReminder','values':['eggs','bacon','pasta','bread']}",
+  "expression": "* * * * *",
+  "nextExecutionStatus": "Pending",
+  "nextExecutionDate": "2022-10-25T18:27:00.000Z",
+  "createdAt": "2022-10-25T18:26:04.000Z",
+  "updatedAt": "2022-10-25T18:26:04.000Z"
 }
 ```
 
 ## Example Error Response
 
 ```
-Only events that are pending can be edited
+{
+	"message": "Please enter a valid cron expression"
+}
 ```

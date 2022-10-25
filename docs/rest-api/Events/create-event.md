@@ -127,5 +127,7 @@ const main = () => {
 ## Example Error Response
 
 ```
-Only events that are pending can be edited
+{
+	"message": "Please enter a valid time"
+}
 ```

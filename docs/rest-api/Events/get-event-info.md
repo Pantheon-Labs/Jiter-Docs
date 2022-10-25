@@ -105,5 +105,7 @@ getEvent();
 ## Example Error Response
 
 ```
-Unable to find event
+{
+	"message": "Unable to find event"
+}
 ```

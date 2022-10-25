@@ -131,5 +131,7 @@ const main = () => {
 ## Example Error Response
 
 ```
-Please make sure your scheduled time is in the future.
+{
+	"message": "Please make sure your scheduled time is in the future."
+}
 ```
