@@ -29,7 +29,7 @@ This endpoint will return all CRON jobs for your org.
 | Code | Description                     |
 | ---- | ------------------------------- |
 | 200  | Cron jobs returned successfully |
-| 500  | Unable to get CRON jobs         |
+| 500  | Unable to retrieve CRON jobs    |
 
 ## Example Usage
 
@@ -47,9 +47,9 @@ const getManyCronJobs = async () => {
       headers: { "x-api-key": "YOUR_API_KEY" },
     });
 
-    console.log("Events found 🎉", data);
+    console.log("Cron jobs found 🎉", data);
   } catch (error) {
-    console.log("Unable to find events", error);
+    console.log("Unable to find cron jobs", error);
   }
 };
 
@@ -74,7 +74,7 @@ getManyEvents();
     "nextExecutionDate": "2022-10-25T18:24:00.000Z",
     "destination": "https://your-app.com/webhooks/jiter",
     "org": "3",
-    "payload": "TESTING FIALED EVENT"
+    "payload": "{'action':'buyGroceriesReminder','values':['eggs','bacon','pasta','bread']}"
   },
   {
     "id": "4",
@@ -86,7 +86,7 @@ getManyEvents();
     "nextExecutionDate": "2022-10-25T18:26:00.000Z",
     "destination": "https://your-app.com/webhooks/jiter",
     "org": "3",
-    "payload": "TESTING FIALED EVENT"
+    "payload": "{'action':'buyGroceriesReminder','values':['eggs','bacon','pasta','bread']}"
   },
   {
     "id": "5",
@@ -98,7 +98,7 @@ getManyEvents();
     "nextExecutionDate": "2022-10-25T18:26:00.000Z",
     "destination": "https://your-app.com/webhooks/jiter",
     "org": "3",
-    "payload": "TESTING FIALED EVENT"
+    "payload": "{'action':'buyGroceriesReminder','values':['eggs','bacon','pasta','bread']}"
   }
 ]
 ```
@@ -107,6 +107,6 @@ getManyEvents();
 
 ```
 {
-	"message": "Unable to get events"
+	"message": "Unable to retrieve cron jobs"
 }
 ```
