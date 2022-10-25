@@ -33,12 +33,12 @@ style={{
 
 ## Request Body Parameters
 
-| Parameter   | Description                                    | Example                                                                         |
-| ----------- | ---------------------------------------------- | ------------------------------------------------------------------------------- |
-| payload     | Your stringified payload                       | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
-| destination | The endpoint we should send your cron event to | `https://your-app.com/webhooks/jiter`                                           |
-| expression  | A cron expression                              | `* * * * *`                                                                     |
-| status      | The cron job status, `Active` or `Disabled`    | `Disabled`                                                                      |
+| Parameter   | Description                                      | Example                                                                         |
+| ----------- | ------------------------------------------------ | ------------------------------------------------------------------------------- |
+| payload     | Your stringified payload                         | `'{"action":"buyGroceriesReminder","values":["eggs","bacon","pasta","bread"]}'` |
+| destination | The endpoint we should send your cron payload to | `https://your-app.com/webhooks/jiter`                                           |
+| expression  | A cron expression                                | `* * * * *`                                                                     |
+| status      | The cron job status, `Active` or `Disabled`      | `Disabled`                                                                      |
 
 ## Response
 
