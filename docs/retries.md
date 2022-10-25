@@ -4,9 +4,9 @@ title: Retries
 sidebar_position: 4
 ---
 
-In the event of failures, Jiter will try to send your events and CRON jobs to your desired endpoint at least 3 more times:
+In the event of failures, Jiter will try to send your events and cron jobs to your desired endpoint at least 3 more times:
 
-The `first` retry will occur 3 seconds after the `scheduledTime` for events and `nextScheduledDate` for CRON jobs.
+The `first` retry will occur 3 seconds after the `scheduledTime` for events and `nextScheduledDate` for cron jobs.
 
 The `second` retry will occur 5 seconds after the `first` retry.
 
@@ -22,6 +22,6 @@ The second retry will occur at `12:00:08 AM`
 
 The third retry will occur at `12:00:18 AM`
 
-You need to return any status code between `200` - `299` for Jiter to consider the event or CRON job successfully delivered.
+You need to return any status code between `200` - `299` for Jiter to consider the event or cron job successfully delivered.
 
-You can view the event and CRON job history by using the `GET /events/:id` and `GET /cronjobs/:id` endpoints.
+You can view the event and cron job history by using the `GET /events/:id` and `GET /cronjobs/:id` endpoints.

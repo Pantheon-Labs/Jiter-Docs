@@ -33,3 +33,7 @@ Per query, you are limited to:
 - 1,000 events
 - Any event with a `scheduledTime` in the future
 - Any event with a `sentAt` or `failedAt` date in the last 7 days
+
+### Creating Cron Jobs
+
+You can create up to 3 cron jobs per organization
