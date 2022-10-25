@@ -36,4 +36,4 @@ Per query, you are limited to:
 
 ### Creating Cron Jobs
 
-You can create up to 3 cron jobs per organization, for a total of 15 cron jobs per account.
+You can create up to 3 cron jobs per organization
