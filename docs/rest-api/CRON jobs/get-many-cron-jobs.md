@@ -21,9 +21,9 @@ style={{
 </span>
 );
 
-<Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs
-
 This endpoint will return all cron jobs for your org.
+
+<Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs
 
 ## Response
 
