@@ -3,6 +3,6 @@
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5 minutes to learn the most important Docusaurus concepts."
+    "description": "You can use our REST API directly to interact with Events and Cron jobs in your account."
   }
 }
