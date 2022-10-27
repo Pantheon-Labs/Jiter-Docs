@@ -21,6 +21,8 @@ style={{
 </span>
 );
 
+Creates a Cron job to trigger on a set schedule
+
 <Highlight color="#00c853">POST</Highlight> https://app.jiter.dev/api/cronjobs
 
 ## Request Body Parameters

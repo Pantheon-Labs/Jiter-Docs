@@ -21,9 +21,9 @@ style={{
 </span>
 );
 
-<Highlight color="#ff6d00">PUT</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId
+Updates a given Cron job
 
->
+<Highlight color="#ff6d00">PUT</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId
 
 ## Request Parameters
 
