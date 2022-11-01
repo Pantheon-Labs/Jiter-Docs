@@ -82,6 +82,11 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          {
+            href: "https://calendly.com/jiter/demo",
+            position: "right",
+            label: "Chat with Us",
+          },
         ],
       },
 
