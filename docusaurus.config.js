@@ -73,6 +73,11 @@ const config = {
             label: "npm",
           },
           {
+            href: "https://calendly.com/jiter/demo",
+            position: "left",
+            label: "Chat with Us",
+          },
+          {
             href: "https://app.jiter.dev",
             position: "right",
             label: "Dashboard",
@@ -81,11 +86,6 @@ const config = {
             href: "https://github.com/Pantheon-Labs/Jiter-Docs",
             label: "GitHub",
             position: "right",
-          },
-          {
-            href: "https://calendly.com/jiter/demo",
-            position: "right",
-            label: "Chat with Us",
           },
         ],
       },
