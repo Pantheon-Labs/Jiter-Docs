@@ -21,7 +21,7 @@ style={{
 </span>
 );
 
-Retrieves info about a specific cron job by ID
+Retrieves info about a specific cron job by ID and the associated execution history of this cron job
 
 <Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId
 

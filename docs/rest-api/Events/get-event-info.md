@@ -20,7 +20,7 @@ style={{
 </span>
 );
 
-Retrieves info about a specific event by ID
+Retrieves info about a specific event by ID and the associated event history
 
 <Highlight color="#0091ea">GET</Highlight> 'https://app.jiter.dev/api/events/:eventId'
 
