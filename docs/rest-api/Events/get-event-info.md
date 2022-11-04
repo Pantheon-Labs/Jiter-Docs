@@ -1,6 +1,6 @@
 ---
-id: get-event-info
-slug: /create-an-event
+id: get-event
+slug: /get-event
 title: Get Event Info
 sidebar_position: 3
 ---
