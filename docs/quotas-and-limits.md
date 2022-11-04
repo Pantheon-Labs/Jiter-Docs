@@ -24,7 +24,11 @@ There are no limits to the number of users in your org
 
 ### Creating Events
 
-You can create as many events that you want, however, you can only have 1,000 _scheduled_ events per month per org. These are events that have a `scheduledDate` within the same month.
+You can create as many events that you want, however, you can only have 1,000 _scheduled_ events per month per org. These are events that have a `scheduledDate` within the same month
+
+### Payload Size
+
+The max `payload` size for an Event or Cron Job cannot exceed 1kb (1024 bytes)
 
 ### Events Searching
 
