@@ -1,6 +1,7 @@
 ---
 id: update-event
 title: Update Event
+slug: /update-event
 sidebar_position: 4
 ---
 

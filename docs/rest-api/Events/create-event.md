@@ -1,5 +1,6 @@
 ---
 id: create-event
+slug: /create-an-event
 title: Create Event
 sidebar_position: 2
 ---

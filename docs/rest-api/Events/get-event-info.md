@@ -1,5 +1,6 @@
 ---
 id: get-event-info
+slug: /create-an-event
 title: Get Event Info
 sidebar_position: 3
 ---
