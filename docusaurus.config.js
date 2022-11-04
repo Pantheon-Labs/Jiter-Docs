@@ -99,11 +99,11 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/getting-started",
+                to: "/getting-started",
               },
               {
                 label: "REST API",
-                to: "/docs/category/rest-api",
+                to: "/category/rest-api",
               },
             ],
           },
