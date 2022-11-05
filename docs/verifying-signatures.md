@@ -107,8 +107,7 @@ const localSignature = createHmac("sha256", signingSecret)
   .digest("base64");
 
 if (requestSignature === localSignature) {
-  res.sendStatus(401);
-  return;
+  res.sendStatus(200);
 }
 
 const parsedBody = JSON.parse(body);
