@@ -6,9 +6,16 @@ import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
 import styles from "./index.module.css";
+import { hotjar } from "react-hotjar";
+
+const hotjarId = 3248897; // This is publicly accessible and is not sensitive
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  React.useEffect(() => {
+    hotjar.initialize(hotjarId, 6);
+  }, []);
+
   return (
     <header
       className={clsx("hero hero--primary", styles.heroBanner, "custom-hero")}
