@@ -4,9 +4,9 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
+import { hotjar } from "react-hotjar";
 
 import styles from "./index.module.css";
-import { hotjar } from "react-hotjar";
 
 const hotjarId = 3248897; // This is publicly accessible and is not sensitive
 
