@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import DocPage from "@theme/DocPage";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import { hotjar } from "react-hotjar";
 
@@ -26,7 +27,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/getting-started"
+            to="/getting-started"
           >
             Get Started In Just 5 Minutes ⏱️
           </Link>
@@ -41,6 +42,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout title={siteConfig.title} description="Just In Time Webhooks">
       <HomepageHeader />
+
       <main>
         <HomepageFeatures />
       </main>

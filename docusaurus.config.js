@@ -37,6 +37,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs/blob/main",
+          routeBasePath: "/",
         },
         // blog: {
         //   showReadingTime: true,
@@ -73,6 +74,11 @@ const config = {
             label: "npm",
           },
           {
+            href: "https://calendly.com/jiter/demo",
+            position: "left",
+            label: "Chat with Us",
+          },
+          {
             href: "https://app.jiter.dev",
             position: "right",
             label: "Dashboard",
@@ -93,11 +99,11 @@ const config = {
             items: [
               {
                 label: "Getting Started",
-                to: "/docs/getting-started",
+                to: "/getting-started",
               },
               {
                 label: "REST API",
-                to: "/docs/category/rest-api",
+                to: "/category/rest-api",
               },
             ],
           },

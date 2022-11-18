@@ -1,5 +1,6 @@
 ---
 id: get-many-events
+slug: /get-many-events
 title: Get Many Events
 sidebar_position: 5
 ---

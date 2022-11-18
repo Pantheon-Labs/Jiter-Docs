@@ -24,16 +24,35 @@ There are no limits to the number of users in your org
 
 ### Creating Events
 
-You can create as many events that you want, however, you can only have 1,000 _scheduled_ events per month per org. These are events that have a `scheduledDate` within the same month.
+You can create as many events that you want, however, you can only have 1,000 _scheduled_ events per month per org. These are events that have a `scheduledDate` within the same month
 
-### Events Searching - `GET /events` & `getManyEvents`
+### Payload Size
 
-Per query, you are limited to:
+The max `payload` size for an Event or Cron Job cannot exceed 1kb (1024 bytes)
 
-- 1,000 events
-- Any event with a `scheduledTime` in the future
-- Any event with a `sentAt` or `failedAt` date in the last 7 days
+### Events Searching
+
+- #### `GET /events` & `getManyEvents`
+
+  - 1,000 events
+  - Any event with a `scheduledTime` in the future
+  - Any event with a `sentAt` or `failedAt` date in the last 7 days
+
+- #### `GET /events/:eventId` & `getEvent`
+
+  - Event history is limited to the past 30 days
+  - Event must have a `scheduledTime` in the future OR
+  - Event must have a `sentAt` or `failedAt` date in the last 7 days
 
 ### Creating Cron Jobs
 
 You can create up to 3 cron jobs per organization
+
+### Cron Job Searching
+
+- #### `GET /cronjobs` & `getManyCronJobs`
+
+  - There are no limits on the above endpoint, you will retrieve all of the cron jobs for your org
+
+- #### `GET /cronjobs/:cronjobId` & `getCronJob`
+  - Cron job history is limited to the past 30 days

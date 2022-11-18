@@ -21,7 +21,13 @@ style={{
 </span>
 );
 
-This endpoint will return all cron jobs for your org.
+:::caution
+
+Cron jobs are currently in **ALPHA** and _are not_ considered stable. This feature may change at any time, please use with caution.
+
+:::
+
+Retrieves the Cron jobs in your org
 
 <Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs
 

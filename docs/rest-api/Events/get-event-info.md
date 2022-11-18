@@ -1,5 +1,6 @@
 ---
-id: get-event-info
+id: get-event
+slug: /get-event
 title: Get Event Info
 sidebar_position: 3
 ---
@@ -20,7 +21,7 @@ style={{
 </span>
 );
 
-Retrieves info about a specific event by ID
+Retrieves info about a specific event by ID and the associated event history
 
 <Highlight color="#0091ea">GET</Highlight> 'https://app.jiter.dev/api/events/:eventId'
 
