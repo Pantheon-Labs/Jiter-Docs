@@ -8,22 +8,13 @@ sidebar_position: 5
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-export const Highlight = ({children, color}) => (
-<span
-style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.4rem',
-      fontWeight: 'bold'
-    }}>
-{children}
-</span>
-);
+:::caution
 
-This endpoint will return all cron jobs for your org.
+Cron jobs are currently in **ALPHA** and _are not_ considered stable. This feature may change at any time, please use with caution.
 
-<Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs
+:::
+
+Retrieves the Cron jobs in your org
 
 ## Response
 

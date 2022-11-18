@@ -21,6 +21,12 @@ style={{
 </span>
 );
 
+:::caution
+
+Cron jobs are currently in **ALPHA** and _are not_ considered stable. This feature may change at any time, please use with caution.
+
+:::
+
 Creates a Cron job to trigger on a set schedule
 
 <Highlight color="#00c853">POST</Highlight> https://app.jiter.dev/api/cronjobs

@@ -21,6 +21,12 @@ style={{
 </span>
 );
 
+:::caution
+
+Cron jobs are currently in **ALPHA** and _are not_ considered stable. This feature may change at any time, please use with caution.
+
+:::
+
 Updates a given Cron job
 
 <Highlight color="#ff6d00">PUT</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId

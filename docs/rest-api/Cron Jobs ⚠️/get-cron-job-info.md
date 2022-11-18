@@ -21,6 +21,12 @@ style={{
 </span>
 );
 
+:::caution
+
+Cron jobs are currently in **ALPHA** and _are not_ considered stable. This feature may change at any time, please use with caution.
+
+:::
+
 Retrieves info about a specific cron job by ID and the associated execution history of this cron job
 
 <Highlight color="#0091ea">GET</Highlight> https://app.jiter.dev/api/cronjobs/:cronJobId
