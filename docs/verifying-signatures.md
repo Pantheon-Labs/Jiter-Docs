@@ -44,7 +44,7 @@ api.use("/webhooks/jiter", jiterWebhookEvent);
 const Jiter = require("@jiter/node").default;
 
 module.exports = {
-  jiterWebhookEvent: jiter.Middleware.webhookHandler(
+  jiterWebhookEvent: Jiter.Middleware.webhookHandler(
     ({ payload }) => {
       console.log("Signed, valid Jiter event received");
       // Now that the event was verified and a response was sent, you can continue with the payload:
