@@ -46,16 +46,8 @@ const config = {
           editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs/blob/main",
           routeBasePath: "/",
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs",
-        // },
+
         theme: {
-          metadata: [
-            { name: "jiter", content: "jiter docs, jiter blog, jiter how to" },
-          ],
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),

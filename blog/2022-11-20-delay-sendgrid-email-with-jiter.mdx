@@ -30,7 +30,7 @@ We have created an example [repository on GitHub](https://github.com/SpencerKais
 
 If you're trying to send a transactional email on SendGrid, you can only delay it by 72 hours in advance:
 
-![sendgrid72hrs](../static/img/sendgrid72hrs.png)
+![sendgrid 72 hour delay limit](../static/img/sendgrid72hrs.png)
 
 What if you want to delay it more than that? What if you want to send emails on a user's 7th or 30th day of being on your platform?
 
@@ -48,13 +48,13 @@ As you might have already guessed, the solution to this problem is pretty straig
 8. Repeat the database read every minute because you actually meant to schedule it [at a different time](https://crontab.guru/)
 9. Finally realize your jobs are not running at your desired time because you forgot timezones are a thing and you deploy to `us-east-1` like a [madlad](https://www.lastweekinaws.com/blog/lessons-in-trust-from-us-east-1/)
 
-![a-better-way](../static/img/joey-better-way.gif)
+![there has to be a better way gif with Joey from FRIENDS](../static/img/joey-better-way.gif)
 
 ## The Actual Solution
 
 What if you could send an API call to a service with a timestamp and payload when the user is created... aaaaaaand receive that event back at that timestamp on your server?
 
-![paulie](../static//img/paulie.png)
+![Paulie Walnuts from The Sopranos describing Jiter](../static//img/paulie.png)
 
 ### 1. Get your Jiter API Key and Signing Secret
 
@@ -64,18 +64,18 @@ The signing secret is used to verify that the event came from us, and not a mali
 :::info
 We recently launched a [playground](https://jiter.dev/)! You can test out creating and receiving events without setting anything up locally :)
 
-![playground](../static/img//playground.png)
+![An image showing the Jiter playground user interface](../static/img//playground.png)
 :::
 
 ### 2. Get your SendGrid API Key
 
 When you log in to SendGrid, go to `Settings` on the left sidebar and click on API keys
 
-![sgapikey](../static/img/api-keys-tab.png)
+![SendGrid API key menu](../static/img/api-keys-tab.png)
 
 and create a new API key with the `Mail Send` permission:
 
-![sgpermissions](../static/img/sg-permissions.png)
+![SendGrid mail send permissions](../static/img/sg-permissions.png)
 
 ### 3. Clone our repository / Set up your server
 
@@ -88,31 +88,31 @@ If you don't want to set anything up locally you can use our [playground](https:
 
 If you go to the [POST /events.ts](https://github.com/SpencerKaiser/Jiter-Sendgrid-Example/blob/main/src/api/events/post.ts) endpoint, you can see how simple using Jiter is. In our example, we are simulating a user that wants to buy groceries and sending them a reminder email in one week. All you need is the destination, payload, and the ISO timestamp on when you would like to receive the event:
 
-![create-event-sg](../static/img/create-event-sg.png)
+![Code snippet showing how to create an event with Jiter](../static/img/create-event-sg.png)
 
 ### 5. Listen for the event
 
 In the [GET /webhooks/groceriesHandler.ts](https://github.com/SpencerKaiser/Jiter-Sendgrid-Example/blob/main/src/api/webhooks/groceriesHandler.ts) file, you might notice a middleware from the [Jiter SDK](https://www.npmjs.com/package/@jiter/node):
 
-![jiter-event-listening-1](../static/img/event-listening-pt1.png)
+![Code snippet showing the Jiter middleware](../static/img/event-listening-pt1.png)
 
 This middleware handles verifying the event for you, including the timestamp, signature, as well as responding back to our servers with a `4XX` or `200` error code. All you have to do is focus on your business logic.
 
 We first check the action from the event payload which tells us what action to take and do another quick credentials check:
 
-![jiter-event-listening-2](../static/img/event-listening-pt2.png)
+![Code snippet showing how to handle an incoming event](../static/img/event-listening-pt2.png)
 
 We send the user an _initial_ email telling them to buy groceries, and letting them know that we will send them a reminder email in one week.
 
-![jiter-event-listening-3](../static/img/event-listening-pt3.png)
+![Code snippet showing how to send an email with SendGrid](../static/img/event-listening-pt3.png)
 
 We then repeat the previous process and and schedule another event with Jiter to be 7 days from now at our `/reminders` endpoint. Do note, the event can be scheduled at [any time in the future](https://docs.jiter.dev/create-an-event).
 
-![jiter-event-listening-4](../static/img/event-listening-pt4.png)
+![Code snippet showing how to schedule a reminder event with Jiter](../static/img/event-listening-pt4.png)
 
 Our reminder handler is extremely straightforward thanks to the Jiter middleware. All we need to do is focus on our business logic of sending the email when it comes in:
 
-![jiter-event-listening-5](../static/img/event-listening-pt5.png)
+![Code snippet showing how to process the reminder event using Jiter middleware](../static/img/event-listening-pt5.png)
 
 Tada! That's how you can use Jiter to schedule delayed emails with SendGrid and bypass the 72 hour limit. Please let us know if you have any questions! We can be reached out on GitHub at [@joswayski](https://github.com/joswayski) and [@SpencerKaiser](https://github.com/SpencerKaiser).
 or by email `jose` or `spencer` @pantheonlabs.com
