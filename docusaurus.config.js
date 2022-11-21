@@ -33,9 +33,9 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         blog: {
-          showReadingTime: true, // When set to false, the "x min read" won't be shown
+          showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+            defaultReadingTime({ content, options: { wordsPerMinute: 220 } }),
           editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs/blob/main",
         },
 
