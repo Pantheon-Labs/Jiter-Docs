@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjiter_docs=self.webpackChunkjiter_docs||[]).push([[2535],{5641:e=>{e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Schedule SendGrid emails 72+ hours in the future via Jiter","permalink":"/blog/schedule-sendgrid-email-with-jiter"}]}')}}]);

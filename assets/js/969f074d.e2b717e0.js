@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjiter_docs=self.webpackChunkjiter_docs||[]).push([[2419],{6164:e=>{e.exports=JSON.parse('{"label":"email","permalink":"/blog/tags/email","allTagsPath":"/blog/tags","count":1}')}}]);

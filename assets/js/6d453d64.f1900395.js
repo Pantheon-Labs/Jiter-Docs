@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkjiter_docs=self.webpackChunkjiter_docs||[]).push([[9287],{794:a=>{a.exports=JSON.parse('{"label":"api","permalink":"/blog/tags/api","allTagsPath":"/blog/tags","count":1}')}}]);
