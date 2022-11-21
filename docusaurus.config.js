@@ -32,6 +32,13 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
+        blog: {
+          showReadingTime: true, // When set to false, the "x min read" won't be shown
+          readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+            defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
+          editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs/blob/main",
+        },
+
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
@@ -73,6 +80,7 @@ const config = {
             position: "left",
             label: "npm",
           },
+          { to: "blog", label: "Blog", position: "right" },
           {
             href: "https://calendly.com/jiter/demo",
             position: "left",
