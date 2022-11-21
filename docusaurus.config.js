@@ -53,6 +53,9 @@ const config = {
         //   editUrl: "https://github.com/Pantheon-Labs/Jiter-Docs",
         // },
         theme: {
+          metadata: [
+            { name: "jiter", content: "jiter docs, jiter blog, jiter how to" },
+          ],
           customCss: require.resolve("./src/css/custom.css"),
         },
       }),
