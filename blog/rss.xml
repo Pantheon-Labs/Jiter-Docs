@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Jiter Docs Blog</title>
-        <link>https://jiter.dev/blog</link>
+        <link>https://docs.jiter.dev/blog</link>
         <description>Jiter Docs Blog</description>
         <lastBuildDate>Sun, 20 Nov 2022 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
@@ -10,7 +10,7 @@
         <language>en</language>
         <item>
             <title><![CDATA[Schedule SendGrid emails 72+ hours in the future via Jiter]]></title>
-            <link>https://jiter.dev/blog/schedule-sendgrid-email-with-jiter</link>
+            <link>https://docs.jiter.dev/blog/schedule-sendgrid-email-with-jiter</link>
             <guid>schedule-sendgrid-email-with-jiter</guid>
             <pubDate>Sun, 20 Nov 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Use Jiter to delay your email delivery by more than 3 days, bypassing SendGrid API limitations]]></description>
