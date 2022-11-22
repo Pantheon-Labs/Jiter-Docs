@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Jiter Docs",
   tagline: "Just In Time Webhooks",
-  url: "https://jiter.dev/",
+  url: "https://docs.jiter.dev",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
