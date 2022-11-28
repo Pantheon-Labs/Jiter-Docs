@@ -65,6 +65,11 @@ const config = {
         },
         items: [
           {
+            href: "https://github.com/Pantheon-Labs/Jiter-Docs",
+            position: "right",
+            className: "header-github-link",
+          },
+          {
             type: "doc",
             docId: "getting-started",
             position: "left",
@@ -85,11 +90,6 @@ const config = {
             href: "https://app.jiter.dev",
             position: "right",
             label: "Dashboard",
-          },
-          {
-            href: "https://github.com/Pantheon-Labs/Jiter-Docs",
-            label: "GitHub",
-            position: "right",
           },
         ],
       },
