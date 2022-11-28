@@ -65,13 +65,6 @@ const config = {
         },
         items: [
           {
-            to: "https://app.jiter.dev",
-            position: "right",
-            label: "Sign Up",
-            className: "signup-cta",
-          },
-
-          {
             type: "doc",
             docId: "getting-started",
             position: "left",
@@ -89,8 +82,15 @@ const config = {
             label: "npm",
           },
           {
+            to: "https://app.jiter.dev",
+            position: "right",
+            label: "Dashboard",
+            className: "signup-cta",
+          },
+
+          {
             href: "https://github.com/Pantheon-Labs/Jiter-Docs",
-            position: "left",
+            position: "right",
             className: "header-github-link",
           },
         ],
