@@ -65,32 +65,33 @@ const config = {
         },
         items: [
           {
-            href: "https://app.jiter.dev",
+            to: "https://app.jiter.dev",
             position: "right",
             label: "Sign Up",
             className: "signup-cta",
           },
-          {
-            href: "https://github.com/Pantheon-Labs/Jiter-Docs",
-            position: "right",
-            className: "header-github-link",
-          },
+
           {
             type: "doc",
             docId: "getting-started",
             position: "left",
             label: "Documentation",
           },
+          { to: "blog", label: "Blog", position: "left" },
+          {
+            href: "https://calendly.com/jiter/demo",
+            position: "left",
+            label: "Chat with Us",
+          },
           {
             href: "https://www.npmjs.com/package/@jiter/node",
             position: "left",
             label: "npm",
           },
-          { to: "blog", label: "Blog", position: "right" },
           {
-            href: "https://calendly.com/jiter/demo",
+            href: "https://github.com/Pantheon-Labs/Jiter-Docs",
             position: "left",
-            label: "Chat with Us",
+            className: "header-github-link",
           },
         ],
       },
