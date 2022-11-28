@@ -65,6 +65,12 @@ const config = {
         },
         items: [
           {
+            href: "https://app.jiter.dev",
+            position: "right",
+            label: "Sign Up",
+            className: "signup-cta",
+          },
+          {
             href: "https://github.com/Pantheon-Labs/Jiter-Docs",
             position: "right",
             className: "header-github-link",
@@ -85,11 +91,6 @@ const config = {
             href: "https://calendly.com/jiter/demo",
             position: "left",
             label: "Chat with Us",
-          },
-          {
-            href: "https://app.jiter.dev",
-            position: "right",
-            label: "Dashboard",
           },
         ],
       },
