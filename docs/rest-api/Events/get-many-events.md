@@ -70,7 +70,10 @@ const getManyEvents = async () => {
 
   try {
     const { data } = await axios.get(`${apiBaseUrl}/events?${query}`, {
-      headers: { "x-api-key": "YOUR_API_KEY" },
+      headers: {
+        "x-api-key": "YOUR_API_KEY",
+        "Content-Type": "application/json",
+      },
     });
 
     console.log("Events found 🎉", data);

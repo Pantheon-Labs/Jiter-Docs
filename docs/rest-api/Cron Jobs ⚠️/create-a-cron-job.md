@@ -69,7 +69,12 @@ const createCronJob = async () => {
           values: ["eggs", "bacon", "pasta", "bread"],
         }),
       },
-      { headers: { "x-api-key": "YOUR_API_KEY" } }
+      {
+        headers: {
+          "x-api-key": "YOUR_API_KEY",
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     console.log("Cron Job created 🎉", data);
