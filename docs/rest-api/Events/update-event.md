@@ -72,7 +72,12 @@ const updateEvent = async () => {
         }),
         status: "Cancelled",
       },
-      { headers: { "x-api-key": "YOUR_API_KEY" } }
+      {
+        headers: {
+          "x-api-key": "YOUR_API_KEY",
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     console.log("Event updated 🎉", data);

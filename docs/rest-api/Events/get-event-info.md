@@ -52,7 +52,10 @@ const apiBaseUrl = "https://app.jiter.dev/api";
 const getEvent = async () => {
   try {
     const { data } = await axios.get(`${apiBaseUrl}/events/47`, {
-      headers: { "x-api-key": "YOUR_API_KEY" },
+      headers: {
+        "x-api-key": "YOUR_API_KEY",
+        "Content-Type": "application/json",
+      },
     });
 
     console.log("Event found 🎉", data);

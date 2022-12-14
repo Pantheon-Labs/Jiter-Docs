@@ -71,7 +71,12 @@ const updateCronJob = async () => {
       {
         status: "Disabled",
       },
-      { headers: { "x-api-key": "YOUR_API_KEY" } }
+      {
+        headers: {
+          "x-api-key": "YOUR_API_KEY",
+          "Content-Type": "application/json",
+        },
+      }
     );
 
     console.log("cron job updated 🎉", data);

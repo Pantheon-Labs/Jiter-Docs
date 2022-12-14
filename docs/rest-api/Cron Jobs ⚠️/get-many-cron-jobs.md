@@ -51,7 +51,10 @@ const apiBaseUrl = "https://app.jiter.dev/api";
 const getManyCronJobs = async () => {
   try {
     const { data } = await axios.get(`${apiBaseUrl}/cronJobs`, {
-      headers: { "x-api-key": "YOUR_API_KEY" },
+      headers: {
+        "x-api-key": "YOUR_API_KEY",
+        "Content-Type": "application/json",
+      },
     });
 
     console.log("Cron jobs found 🎉", data);
